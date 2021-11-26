@@ -1,0 +1,42 @@
+.userhome{
+    background-image: url('../../../images/homebanner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+}
+
+.searchform{
+    background-color: rgba(245, 222, 179, 0.7);
+}
+.hometext{
+    font-size: 45px;
+    text-transform: uppercase;
+    text-shadow: 0 0 2px #000000;
+    font-family: Swiss-721,Helvetica,Arial,sans-serif;
+    color: white;
+}
+.exbtn{
+    font-size: 22px;
+    text-transform: uppercase;
+    padding: 15px 0px 15px 0;
+    background-color: #444054;
+}
+.searchbtn{
+    border: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: #444054;
+}
+.searchbtn:hover{
+
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: #444054;
+}
+.hidrow{
+    display: none;
+}
+.searchtxt{
+    background-color: #444054;
+}
