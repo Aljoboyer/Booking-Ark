@@ -1,0 +1,13 @@
+@media only screen and (max-width:688px) {
+    .sidebar{
+        display: none;
+    }
+}
+.sidetxt{
+    color: #444054;
+    border: solid #444054 1px;
+}
+.addform{
+    border-radius: 10px;
+    border: solid #444054 4px ;
+}

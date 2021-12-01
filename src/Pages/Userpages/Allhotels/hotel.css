@@ -1,3 +1,23 @@
+.facilityrow{
+  background-color: #444054;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+.imgs{
+  height: 200px;
+  width:300px;
+}
+.title{
+  border: solid 1px white;
+}
+.regbtn{
+  background-color: #444054;
+  color: white;
+}
+.carts{
+  border: solid #444054 2px;
+  border-radius: 10px;
+}
 .sk-folding-cube {
     margin: 20px auto;
     width: 40px;

@@ -15,7 +15,7 @@ const Searchitems = () => {
                 setFilterhotel(filteritem)
                 console.log('cancel click', item, filteritem)
             }  
-        if(item === 'cancel')
+        if(item === 'cancelation')
             {
                 const filteritem = state.hotels.filter(hotel => hotel.facility === 'cancelation');
                 setFilterhotel(filteritem)
@@ -41,37 +41,37 @@ const Searchitems = () => {
     return (
         <div className="container-fluid">
             <Usernavber></Usernavber>
-            <Row className="justify-content-center my-4 gy-3">
+            <Row className="justify-content-center my-4 gy-3 facilityrow">
             <Col onClick={() => FilterHandler('all') } className="fw-bold filtertitle" lg={2} sm={12}  md={6}>
-                    <h6>All</h6>
+                    <h6 className="title text-center p-2">All</h6>
                 </Col>
-                <Col onClick={() => FilterHandler('cancel') } className="fw-bold filtertitle" lg={2} sm={12}  md={6}>
-                    <h6>Cancelation Flexibility</h6>
+                <Col onClick={() => FilterHandler('cancelation') } className="fw-bold filtertitle" lg={2} sm={12}  md={6}>
+                    <h6 className="title text-center p-2">Cancelation Flexibility</h6>
                 </Col>
                 <Col onClick={() => FilterHandler('breakfast') } className="fw-bold filtertitle" lg={2} sm={12}  md={6}>
-                <h6>Free Breakfast</h6>
+                <h6 className="title text-center p-2">Free Breakfast</h6>
                 </Col>
                 <Col onClick={() => FilterHandler('pool') } className="fw-bold filtertitle" lg={2} sm={12}  md={6}>
-                <h6>Pool</h6>
+                <h6 className="title text-center p-2">Pool</h6>
                 </Col>
                 <Col onClick={() => FilterHandler('fitness') } className="fw-bold filtertitle" lg={2} sm={12}  md={6}>
-                <h6>Fitness Center</h6>
+                <h6 className="title text-center p-2">Fitness Center</h6>
                 </Col>
             </Row>
 
-            <Row classsName="contianer justify-content-center bg-dark">
+            <Row classsName="contianer justify-content-center my-4">
                 <Col className="" lg={3} md={3} sm={6}>
-                <h3><span className="">Location</span> : {state.fdata?.destination}</h3>
+                <h5><span className="">Location</span> : {state.fdata?.destination}</h5>
                 </Col>
                 <Col lg={3} md={3} sm={6}>
-                <h3>Member : {state?.person}</h3>
+                <h5>Member : {state?.person}</h5>
                 </Col>
                 <Col lg={3} md={3} sm={6}>
-                <h3>Day: {state?.day}</h3>
+                <h5>Day: {state?.day}</h5>
                 </Col>
                
                 <Col lg={3} md={3} sm={6}>
-                <h3> From: {state.fdata?.fromdate} To : {state.fdata?.todate}</h3>
+                <h5> From: {state.fdata?.fromdate} To : {state.fdata?.todate}</h5>
                 </Col>
             </Row>
             {

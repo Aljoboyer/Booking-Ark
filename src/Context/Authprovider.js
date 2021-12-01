@@ -1,11 +1,11 @@
 import React, { createContext } from 'react';
-import FindHotels from '../Pages/Userpages/UserHooks/Userhooks';
+import useFirebase from '../Pages/Shared/Authentication/useFirebase';
 
 export const Authcontext = createContext()
 const Authprovider = ({children}) => {
-    // const allcontext = FindHotels()
+    const allcontext = useFirebase()
     return (
-        <Authcontext.Provider >
+        <Authcontext.Provider value={allcontext}>
             {children}
         </Authcontext.Provider>
     );

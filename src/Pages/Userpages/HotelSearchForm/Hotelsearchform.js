@@ -52,18 +52,18 @@ const Hotelsearchform = () => {
             <Form onSubmit={SubmitHandler} className=" searchform p-4 rounded">
             <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridPassword">
-                <Form.Label>Destination</Form.Label>
+                <Form.Label className="formlabal fs-6 fw-bold">Destination</Form.Label>
                 <Form.Control  name="destination" onBlur={onBlurHandler}  type="text" placeholder="Hotel Location" />
                 </Form.Group>
             </Row>
             <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>From Date</Form.Label>
+                <Form.Label className="formlabal fs-6 fw-bold">From Date</Form.Label>
                 <Form.Control  name="fromdate" onBlur={onBlurHandler}  type="date" placeholder="Hotel price" />
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="formGridPassword">
-                <Form.Label>To Date</Form.Label>
+                <Form.Label className="formlabal fs-6 fw-bold">To Date</Form.Label>
                 <Form.Control  name="todate" onBlur={onBlurHandler}  type="date" placeholder="Room Space" />
                 </Form.Group>
             </Row>

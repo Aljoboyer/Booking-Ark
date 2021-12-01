@@ -11,7 +11,7 @@ const Allhotels = () => {
         .then(res => res.json())
         .then( data => setHotels(data))
     } ,[])
-
+    
     const FilterHandler = (item) => {
         if(item === 'all')
             {
@@ -23,7 +23,6 @@ const Allhotels = () => {
             {
                 const filteritem = hotels.filter(hotel => hotel.facility === 'cancelation');
                 setFilterhotel(filteritem)
-                console.log('cancel click', item, filteritem)
             }   
         else if(item === 'breakfast')
             {
@@ -43,29 +42,29 @@ const Allhotels = () => {
     }
     return (
         <div className="container-fluid mt-4">
-            <Row className="justify-content-center my-4 gy-3">
+            <Row className="justify-content-center my-4 gy-3 facilityrow">
             <Col onClick={() => FilterHandler('all') } className="fw-bold filtertitle" lg={2} sm={12}  md={6}>
-                    <h6>All</h6>
+                    <h6 className="title text-center p-2">All</h6>
                 </Col>
                 <Col onClick={() => FilterHandler('cancel') } className="fw-bold filtertitle" lg={2} sm={12}  md={6}>
-                    <h6>Cancelation Flexibility</h6>
+                    <h6 className="title text-center p-2">Cancelation Flexibility</h6>
                 </Col>
                 <Col onClick={() => FilterHandler('breakfast') } className="fw-bold filtertitle" lg={2} sm={12}  md={6}>
-                <h6>Free Breakfast</h6>
+                <h6 className="title text-center p-2">Free Breakfast</h6>
                 </Col>
                 <Col onClick={() => FilterHandler('pool') } className="fw-bold filtertitle" lg={2} sm={12}  md={6}>
-                <h6>Pool</h6>
+                <h6 className="title text-center p-2">Pool</h6>
                 </Col>
                 <Col onClick={() => FilterHandler('fitness') } className="fw-bold filtertitle" lg={2} sm={12}  md={6}>
-                <h6>Fitness Center</h6>
+                <h6 className="title text-center p-2">Fitness Center</h6>
                 </Col>
             </Row>
             {
-                filterhotel.length ?  <Row className="justify-content-center">
+                filterhotel.length ?  <Row className="gy-3 gx-2 justify-content-center">
                 {
                     filterhotel.map(hotel => <Hotels  key={hotel._id} hotel={hotel}></Hotels>)
                 }
-            </Row> : <> { hotels.length ? <Row className="justify-content-center">
+            </Row> : <> { hotels.length ? <Row className="justify-content-center gy-3 gx-2">
                 {
                     hotels.map(hotel => <Hotels  key={hotel._id} hotel={hotel}></Hotels>)
                 }

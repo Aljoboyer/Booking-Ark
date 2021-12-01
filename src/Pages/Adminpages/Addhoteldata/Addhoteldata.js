@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import {Form,Row,Col,Button} from 'react-bootstrap'
+import {Form,Row,Col,Button} from 'react-bootstrap';
+import Swal from 'sweetalert2';
+
 const Addhoteldata = () => {
     const [hoteldata, setHoteldata] = useState({});
     const [img, setImg] = useState('');
@@ -39,7 +41,7 @@ const Addhoteldata = () => {
         fd.append('img2', img2)
         fd.append('short', hoteldata.short)
         fd.append('overview', hoteldata.overview)
-
+        fd.append('facility', hoteldata.facility)
         //uploading to database
         fetch('http://localhost:5000/addinghotel', {
             method: 'POST',
@@ -48,70 +50,85 @@ const Addhoteldata = () => {
             .then(response => response.json())
             .then(result => {
                 e.target.reset();
-                alert('Upload Success')
+                Swal.fire(
+                    'Hotel Information Added Succesfully',
+                    '',
+                    'success'
+                  )
             })
             .catch(error => {
-                alert('Upload Failed')
+                Swal.fire(
+                    '!',
+                    'Error!',
+                    'error'
+                  )
             });
         
     }
     return (
     <div className="container-fluid">
         <Row className="justify-content-center">
-            <h1 className="text-center fw-bold my-4">Add a Hotel Info</h1>
+            <h3 className="text-center fw-bold my-4">ADD NEW HOTEL INFO</h3>
             <Col lg={8} sm={12} md={10}>
-            <Form onSubmit={SubmitHandler}>
+            <Form className="addform p-3" onSubmit={SubmitHandler}>
             <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>Hotel Name</Form.Label>
+                <Form.Label className="fw-bold">Hotel Name</Form.Label>
                 <Form.Control name="hotelname" onBlur={onBlurHandler} type="text" placeholder="Hotel Name" />
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="formGridPassword">
-                <Form.Label>Hotel Location</Form.Label>
+                <Form.Label className="fw-bold">Hotel Location</Form.Label>
                 <Form.Control  name="hotellocation" onBlur={onBlurHandler}  type="text" placeholder="Hotel Location" />
                 </Form.Group>
             </Row>
             <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>Price Per Night</Form.Label>
+                <Form.Label className="fw-bold">Price Per Night</Form.Label>
                 <Form.Control  name="price" onBlur={onBlurHandler}  type="number" placeholder="Hotel price" />
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="formGridPassword">
-                <Form.Label>Room Space</Form.Label>
+                <Form.Label className="fw-bold">Room Space</Form.Label>
                 <Form.Control  name="space" onBlur={onBlurHandler}  type="Number" placeholder="Room Space" />
                 </Form.Group>
 
+            </Row>
+            <Row className="mb-3">
+                <Form.Group as={Col} controlId="formGridEmail">
+                <Form.Label className="fw-bold">Facility</Form.Label>
+                <Form.Control  name="facility" onBlur={onBlurHandler}  type="text" placeholder="Hotel Facility" />
+                </Form.Group>
+
                 <Form.Group as={Col} controlId="formGridCity">
-                <Form.Label>Rate</Form.Label>
+                <Form.Label className="fw-bold">Rate</Form.Label>
                 <Form.Control  name="rate" onBlur={onBlurHandler}  placeholder="Ratings"/>
                 </Form.Group>
             </Row>
             <Row className="mb-3">
             <Form.Group as={Col}  controlId="formFile" className="mb-3">
-                <Form.Label>Choose Front Image</Form.Label>
+                <Form.Label className="fw-bold">Choose Front Image</Form.Label>
                 <Form.Control onChange={imgHandler} type="file" />
             </Form.Group>
 
                 <Form.Group as={Col}  controlId="formFile" className="mb-3">
-                    <Form.Label>Choose Details Image</Form.Label>
+                    <Form.Label className="fw-bold">Choose Details Image</Form.Label>
                     <Form.Control  onChange={img2Handler} type="file" />
                 </Form.Group>
             </Row>
 
             <Form.Group className="mb-3" controlId="formGridAddress1">
-                <Form.Label>Short Description</Form.Label>
+                <Form.Label className="fw-bold">Short Description</Form.Label>
                 <Form.Control  name="short" onBlur={onBlurHandler}  as="textarea" placeholder="Short Description" />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formGridAddress1">
-                <Form.Label>Overview</Form.Label>
+                <Form.Label className="fw-bold">Overview</Form.Label>
                 <Form.Control  name="overview" onBlur={onBlurHandler}  as="textarea" placeholder="Overview" />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
-                Add
+            <Button className="regbtn" type="submit">
+                ADD
             </Button>
         </Form>
             </Col>

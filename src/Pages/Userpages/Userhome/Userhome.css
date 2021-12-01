@@ -18,8 +18,6 @@
 }
 .exbtn{
     font-size: 22px;
-    text-transform: uppercase;
-    padding: 15px 0px 15px 0;
     background-color: #444054;
 }
 .searchbtn{
@@ -39,4 +37,37 @@
 }
 .searchtxt{
     background-color: #444054;
+}
+@media only screen and (max-width:688px) {
+    .exbtn{
+        font-size: 11px;
+        text-transform: uppercase;
+        background-color: #444054;
+    }
+}
+.fa-sliders-h {
+    color: #444054;
+}
+.snapcard{
+    color: #444054;
+    background-color: #ffffff;
+}
+.snaptitle{
+    color: #444054;
+}
+.everything{
+    background-image: url('../../../images/everythingbanner.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.disagreebtn{
+    border: 3px solid #444054;
+}
+.disagreebtn:hover{
+    background-color: goldenrod;
+    color: darkblue;
+}
+.area{
+    border: 3px solid #444054;
 }

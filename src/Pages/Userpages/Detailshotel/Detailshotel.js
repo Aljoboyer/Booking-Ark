@@ -20,7 +20,7 @@ const Detailshotel = () => {
             }
         })
     },[id])
-    
+   
     return (
         <div className="container-fluid">
             <Usernavber></Usernavber>
@@ -49,10 +49,10 @@ const Detailshotel = () => {
                 </Col>
                 <Col lg={4} md={4} sm={12}>
                    {
-                       state ? <Hotelcart price = {hoteldetails.price} data={state.fdata} day={state.day} person={state.person}></Hotelcart> : <> 
+                       state ? <Hotelcart hoteldetails={hoteldetails} price = {hoteldetails.price} data={state.fdata} day={state.day} person={state.person}></Hotelcart> : <> 
                        <h5><b>Overview</b></h5>     
                        <p>{hoteldetails.overview}</p>
-                       <button className="btn btn-warning">Book Now</button>
+                       <button className="btn regbtn fw-bold text-light">Book Now</button>
                        </>
                    }
                 </Col>

@@ -1,0 +1,10 @@
+.logins{
+    background-image: url('../../../images/loginbg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.loginform{
+    background-color: rgba(30, 30, 75, 0.57);
+    border-radius: 15px;
+}
