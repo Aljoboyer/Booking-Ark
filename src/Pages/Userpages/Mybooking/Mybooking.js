@@ -7,7 +7,7 @@ const Mybooking = () => {
     const {user} = useAuth()
     const [bookings, setBookings] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/bookings?email=${user.email}`,{
+        fetch(`https://hidden-oasis-04101.herokuapp.com/bookings?email=${user.email}`,{
             headers:{
                 'authorization' : `Bearer ${localStorage.getItem('idtoken')}`
             }

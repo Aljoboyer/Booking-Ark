@@ -19,7 +19,7 @@ const CheckoutForm = ({hoteldetails,formsdata, totaldata}) => {
     }
 
     useEffect(() => {
-      fetch('http://localhost:5000/create-payment-intent',{
+      fetch('https://hidden-oasis-04101.herokuapp.com/create-payment-intent',{
           method: 'POST',
           headers: {
               'content-type':'application/json'
@@ -104,7 +104,7 @@ const CheckoutForm = ({hoteldetails,formsdata, totaldata}) => {
           transaction: paymentIntent.client_secret.slice('_secret')[0]
        }
              //saving payment history database
-             fetch('http://localhost:5000/paymentdetailspost',{
+             fetch('https://hidden-oasis-04101.herokuapp.com/paymentdetailspost',{
                 method: 'POST',
                 headers: {
                     'content-type':'application/json'
@@ -120,10 +120,6 @@ const CheckoutForm = ({hoteldetails,formsdata, totaldata}) => {
         <Row className="mt-4 p-4">
 
             <form className="my-4 text-center bg-secondary rounded p-4" onSubmit={handleSubmit}>
-            <Form.Group className="mb-3 w-100" controlId="formGroupEmail">
-              <Form.Label className="fw-bold fs-5">Phone Number</Form.Label>
-              <Form.Control onBlur={OnBlurHanlder} type="number" placeholder="Enter Phone Number" />
-            </Form.Group>
       <CardElement
         options={{
           style: {

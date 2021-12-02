@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
-import { Form, Row ,Button, Col} from 'react-bootstrap';
-import {  useNavigate } from "react-router-dom";
+import React, {useState, useEffect} from 'react';
+import {useParams, useNavigate} from 'react-router-dom';
+import {Card, Col, Form, Row,Button } from 'react-bootstrap';
+import Usernavber from '../UserNavbar/Usernavber'
+const Definitehotelbook = () => {
+    const [hotel, setHotel] = useState({});
+    const {id} = useParams();
 
-
-const Hotelsearchform = () => {
     const [searchdata, setSearchdata] = useState({});
-    const navigate = useNavigate();
     const [child, setChild] = useState(0);
     const [adult, setAdult] = useState(0);
-    const [newperson, setNewperson] = useState(0);
+    const navigate = useNavigate();
 
     const onBlurHandler = e => {
         const searchtext = e.target.name;
@@ -19,6 +20,7 @@ const Hotelsearchform = () => {
         setSearchdata(newdata)
     }
     const person = child + adult;
+
     //counting days between two dates
     const dats = new Date(searchdata.fromdate)
     const dats2 = new Date(searchdata.todate)
@@ -30,46 +32,43 @@ const Hotelsearchform = () => {
     const diffTime = Math.abs(date2 - date1);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-    const SubmitHandler = e => {
-        setNewperson(person)
-        fetch(`https://hidden-oasis-04101.herokuapp.com/searchhotels?search=${searchdata.destination}&&space=${person}`)
+    useEffect(() => {
+        fetch(`https://hidden-oasis-04101.herokuapp.com/getahotel/${id}`)
         .then(res => res.json())
-        .then( data => {
-           
-            if(data.length){
-                navigate('/searchitems', {state: {hotels: data, fdata: searchdata, person: person,  day: diffDays}})
-                e.target.reset() 
-            }
-        })
-       
-        e.preventDefault()
-         
-    }
+        .then(data => setHotel(data))
+    },[id])
 
-  
-     return (
-        <div className="container mt-4"> 
-            <Form onSubmit={SubmitHandler} className=" searchform p-4 rounded">
-            <Row className="mb-3">
+    const SubmitHandler = e => {
+        e.preventDefault()
+        navigate(`/detailshotel/${hotel._id}`, {state: {fdata: searchdata, person: person,  day: diffDays}})
+    }
+    return (
+        <div className="container">
+            <Usernavber></Usernavber>
+            <h4 className="fw-bold my-4 snaptitle text-center">Please Confirm us Your Bookings Details</h4>
+            <Row className="justify-content-center g-2 my-4">
+                <Col lg={5} sm={12} md={6}>
+                <Form onSubmit={SubmitHandler} className=" searchform p-4 rounded">
+            <Row className="my-4">
                 <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label className="formlabal fs-6 fw-bold">Destination</Form.Label>
                 <Form.Control  name="destination" onBlur={onBlurHandler}  type="text" placeholder="Hotel Location" />
                 </Form.Group>
             </Row>
-            <Row className="mb-3">
+            <Row className="my-4">
                 <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label className="formlabal fs-6 fw-bold">From Date</Form.Label>
-                <Form.Control  name="fromdate" onBlur={onBlurHandler}  type="date" placeholder="Hotel price" />
-                </Form.Group>
-
-                <Form.Group as={Col} controlId="formGridPassword">
-                <Form.Label className="formlabal fs-6 fw-bold">To Date</Form.Label>
-                <Form.Control  name="todate" onBlur={onBlurHandler}  type="date" placeholder="Room Space" />
+                <Form.Control  name="fromdate" onBlur={onBlurHandler}  type="date" />
                 </Form.Group>
             </Row>
-            <Row>
-                <Col lg={4} md={8} sm={12}>
-                <h5 className="my-2">Adult :<i  onClick={() => {
+            <Row className="my-4">
+                <Form.Group as={Col} controlId="formGridPassword">
+                <Form.Label className="formlabal fs-6 fw-bold">To Date</Form.Label>
+                <Form.Control  name="todate" onBlur={onBlurHandler}  type="date"  />
+                </Form.Group>
+            </Row>
+            <Row className="my-4">
+               <h5 className="my-2">Adult :<i  onClick={() => {
                    if(adult > 0) 
                    {
                     setAdult(adult - 1)
@@ -82,16 +81,31 @@ const Hotelsearchform = () => {
                     setChild(child - 1)
                    }
                }}  className="fas fa-minus mx-2"> <span className="ms-2">{child}</span></i> <i onClick={() => setChild(child + 1)} className="fas fa-plus ms-2"></i></h5>
+            </Row>
+                <Button  className="my-3 searchbtn"  type="submit">
+            Book Hotel
+            </Button>
+                
+            </Form>
+                </Col>
+                <Col lg={5} sm={12} md={6}>
+                <Card>
+        <Card.Img variant="top" className="imgs" src={`data:image/jpeg;base64,${hotel.img}`} />
+        <Card.Body>
+          <Card.Title><h3>{hotel.hotelname}</h3></Card.Title>
+          <Card.Text>
+          <p>{hotel.short}</p>
+            <h5>$ {hotel.price}</h5>
+            <p>Room {hotel.space}</p>
+          </Card.Text>
+        </Card.Body>
+        <Card.Footer>
+    </Card.Footer>
+      </Card>
                 </Col>
             </Row>
-            <Button className="my-3 searchbtn"  type="submit">
-          Find Hotel
-      </Button>
-            
-        </Form>
-     
         </div>
     );
 };
 
-export default Hotelsearchform;
+export default Definitehotelbook;

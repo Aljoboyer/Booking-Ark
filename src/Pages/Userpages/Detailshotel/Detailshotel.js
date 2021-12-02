@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Row ,Col} from 'react-bootstrap';
-import {useParams, useLocation} from 'react-router-dom'
+import {Link,useParams, useLocation} from 'react-router-dom';
 import Hotelcart from '../Hotelcart/Hotelcart';
 import Usernavber from '../UserNavbar/Usernavber';
 
@@ -10,7 +10,7 @@ const Detailshotel = () => {
     const [hoteldetails,setHoteldetails] = useState([])
     const {id} = useParams()
     useEffect(() => {
-        fetch(`http://localhost:5000/getahotel/${id}`)
+        fetch(`https://hidden-oasis-04101.herokuapp.com/getahotel/${id}`)
         .then(res => res.json())
         .then(data => {
             if(data._id)
@@ -52,7 +52,7 @@ const Detailshotel = () => {
                        state ? <Hotelcart hoteldetails={hoteldetails} price = {hoteldetails.price} data={state.fdata} day={state.day} person={state.person}></Hotelcart> : <> 
                        <h5><b>Overview</b></h5>     
                        <p>{hoteldetails.overview}</p>
-                       <button className="btn regbtn fw-bold text-light">Book Now</button>
+                       <Link to={`/definitehotelbook/${hoteldetails._id}`}><button className="btn regbtn fw-bold text-light">Book Now</button></Link>
                        </>
                    }
                 </Col>

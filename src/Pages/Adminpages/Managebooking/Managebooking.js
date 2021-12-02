@@ -4,7 +4,7 @@ const Managebooking = () => {
     const [bookings, setBookings] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/managebookings')
+        fetch('https://hidden-oasis-04101.herokuapp.com/managebookings')
         .then(res => res.json())
         .then(data => setBookings(data))
     },[])

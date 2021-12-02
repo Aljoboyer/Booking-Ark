@@ -6,13 +6,13 @@ const Managehotels = () => {
     const [hotels, setHotels] = useState([]);
     const [demo, setDemo] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/managehotel')
+        fetch('https://hidden-oasis-04101.herokuapp.com/managehotel')
         .then(res => res.json())
         .then(data => setHotels(data))
     },[demo])
     
     const DeleteHanlder = id => {
-        fetch(`http://localhost:5000/deletehotel?id=${id}`, {
+        fetch(`https://hidden-oasis-04101.herokuapp.com/deletehotel?id=${id}`, {
             method: 'DELETE'
         })
         .then(res => res.json())

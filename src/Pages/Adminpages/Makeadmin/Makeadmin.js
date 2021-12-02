@@ -9,7 +9,7 @@ const Makeadmin = () => {
     const  SubmitHandler = e => {
         e.preventDefault()
 
-        fetch(`http://localhost:5000/addmin?email=${email}`,{
+        fetch(`https://hidden-oasis-04101.herokuapp.com/addmin?email=${email}`,{
             method: 'PUT',
             headers: {
                 'content-type':'application/json'

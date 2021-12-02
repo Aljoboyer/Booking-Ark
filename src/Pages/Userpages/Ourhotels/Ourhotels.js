@@ -9,7 +9,7 @@ import Ourhotel from './Ourhotel';
 const Ourhotels = () => {
     const [hotels, setHotels] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/hotels')
+        fetch('https://hidden-oasis-04101.herokuapp.com/hotels')
         .then(res => res.json())
         .then( data => setHotels(data))
     } ,[])

@@ -26,6 +26,7 @@ import Managehotels from './Pages/Adminpages/Managehotels/Managehotels';
 import Managebooking from './Pages/Adminpages/Managebooking/Managebooking';
 import Dashboard from './Pages/Adminpages/Dashboard/Dashboard';
 import Footer from './Pages/Shared/Footer/Footer';
+import Definitehotelbook from './Pages/Userpages/Definitehotelbook/Definitehotelbook';
 function App() {
   return (
     <div className="">
@@ -44,6 +45,7 @@ function App() {
             <Route path="/login" element={<Login/>} />
             <Route path="/register" element={<Register/>} />
             <Route path="/mybooking" element={<Mybooking/>} />
+            <Route path="/definitehotelbook/:id" element={<Definitehotelbook/>} />
 
             <Route path="/dashboard" element={<Dashboard/>}>
                 <Route path="/dashboard" element={<Dashhome/>} />

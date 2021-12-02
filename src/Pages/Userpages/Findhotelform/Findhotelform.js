@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Col, Form, Row,Button } from 'react-bootstrap';
 import Allhotels from '../Allhotels/Allhotels';
 import Usernavber from '../UserNavbar/Usernavber';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Findhotelform = () => {
     const [searchdata, setSearchdata] = useState({});
@@ -35,7 +35,7 @@ const Findhotelform = () => {
     const SubmitHandler = e => {
         e.preventDefault()
         setNewperson(person)
-        fetch(`http://localhost:5000/findhotels?destination=${searchdata.destination}&&space=${person}`)
+        fetch(`https://hidden-oasis-04101.herokuapp.com/findhotels?destination=${searchdata.destination}&&space=${person}`)
         .then(res => res.json())
         .then(data => {
             if(data)

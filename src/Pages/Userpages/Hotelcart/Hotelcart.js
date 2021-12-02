@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { Link , useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 
 const Hotelcart = ({hoteldetails,data,day,person,price, rule, formsdata, totaldata}) => {
     const navigate = useNavigate()

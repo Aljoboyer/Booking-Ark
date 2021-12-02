@@ -35,7 +35,7 @@ const Addhoteldata = () => {
         fd.append('hotelname', hoteldata.hotelname)
         fd.append('hotellocation', hoteldata.hotellocation)
         fd.append('price', hoteldata.price)
-        fd.append('space', hoteldata.space)
+        fd.append('space', parseInt(hoteldata.space))
         fd.append('rate', hoteldata.rate)
         fd.append('img', img)
         fd.append('img2', img2)
@@ -43,7 +43,7 @@ const Addhoteldata = () => {
         fd.append('overview', hoteldata.overview)
         fd.append('facility', hoteldata.facility)
         //uploading to database
-        fetch('http://localhost:5000/addinghotel', {
+        fetch('https://hidden-oasis-04101.herokuapp.com/addinghotel', {
             method: 'POST',
             body: fd
             })

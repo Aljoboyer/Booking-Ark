@@ -7,7 +7,7 @@ const Searchitem = ({hotel,searchdata,newperson,diffDays}) => {
     const NavigateHandler = (id) => {
             navigate(`/detailshotel/${id}`, {state: {fdata: searchdata, person: newperson,  day: diffDays}})
         
-    }
+    } 
     return (
         <Col lg={4} md={6}>
             <Card>
