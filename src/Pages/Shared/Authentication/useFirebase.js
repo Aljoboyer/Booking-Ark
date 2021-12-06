@@ -100,7 +100,7 @@ const useFirebase = () => {
     useEffect(() => {
       if(user.email)
       {
-        fetch(`http://localhost:5000/findadmin?email=${user.email}`)
+        fetch(`https://hidden-oasis-04101.herokuapp.com/findadmin?email=${user.email}`)
         .then(res => res.json())
         .then(data => setIsadmin(data.isadmin))
       }
@@ -108,7 +108,7 @@ const useFirebase = () => {
     
     const SavedUser = (email, name) => {
       const newuser = {email, name}
-      fetch('http://localhost:5000/saveuser',{
+      fetch('https://hidden-oasis-04101.herokuapp.com/saveuser',{
         method: 'POST',
         headers: {
           'content-type':'application/json'
