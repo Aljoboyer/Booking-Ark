@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 
 initializationFirebase()
 
-const useFirebase = () => {
+const useFirebase = () => { 
     const [user , setUser] = useState({})
     const auth = getAuth();
     const [isloading, setIsloading] = useState(true);

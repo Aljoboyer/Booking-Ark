@@ -7,6 +7,7 @@ import Snapshot from './Snapshot/Snapshot';
 import Everything from './Everything/Everything';
 import Ourhotels from '../Ourhotels/Ourhotels';
 import { Link } from 'react-router-dom';
+import TrustandSecure from './TrustandSecure/TrustandSecure';
 const Userhome = () => {
 
     return (
@@ -24,6 +25,7 @@ const Userhome = () => {
                 </Col>
            </Row>
             </Row>
+            <TrustandSecure></TrustandSecure>
             <Ourhotels></Ourhotels>
            <Snapshot></Snapshot>
            <Everything></Everything>
