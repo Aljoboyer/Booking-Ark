@@ -6,7 +6,7 @@ import snap3 from '../../../../images/snap3.jpg'
 import snap4 from '../../../../images/snap4.jpg'
 const Snapshot = () => {
     return (
-        <div className="container-fluid">
+        <div className="container-fluid snapshot_container">
             <h4 className="my-4 fw-bold snaptitle">A snapshot of the world’s most picture-perfect properties</h4>
             <Row className="my-4 g-3">
                 <Col lg={3} md={6} sm={12}>

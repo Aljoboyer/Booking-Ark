@@ -56,10 +56,15 @@
     color: #444054;
 }
 .everything{
-    background-image: url('../../../images/everythingbanner.jpg');
+    background: url('../../../images/everythingbanner.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 70vh;
+    margin-top: 120px;
+}
+.snapshot_container{
+    padding-top: 50px;
 }
 .disagreebtn{
     border: 3px solid #444054;

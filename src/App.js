@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Addhoteldata from './Pages/Adminpages/Addhoteldata/Addhoteldata';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -27,9 +26,11 @@ import Managebooking from './Pages/Adminpages/Managebooking/Managebooking';
 import Dashboard from './Pages/Adminpages/Dashboard/Dashboard';
 import Footer from './Pages/Shared/Footer/Footer';
 import Definitehotelbook from './Pages/Userpages/Definitehotelbook/Definitehotelbook';
+import TravelPhotography from './Pages/Userpages/TravelPhotography/TravelPhotography';
+import TravelAdvise from './Pages/Userpages/TravelAdvise/TravelAdvise';
 function App() {
   return (
-    <div className="">
+    <main className="">
       <Authprovider>
         <BrowserRouter>
           <Routes>
@@ -46,6 +47,8 @@ function App() {
             <Route path="/register" element={<Register/>} />
             <Route path="/mybooking" element={<Mybooking/>} />
             <Route path="/definitehotelbook/:id" element={<Definitehotelbook/>} />
+            <Route path="/TravelPhotography" element={<TravelPhotography/>} />
+            <Route path="/TravelAdvise" element={<TravelAdvise/>} />
 
             <Route path="/dashboard" element={<Dashboard/>}>
                 <Route path="/dashboard" element={<Dashhome/>} />
@@ -58,7 +61,7 @@ function App() {
           <Footer></Footer>
        </BrowserRouter>
       </Authprovider>
-    </div>
+    </main>
   );
 }
 

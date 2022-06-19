@@ -1,9 +1,6 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import {
-    BrowserRouter,
-    Routes,
-    Route,
     Outlet
   } from "react-router-dom";
 import Dashboardsidebar from './Dashboardsidebar';

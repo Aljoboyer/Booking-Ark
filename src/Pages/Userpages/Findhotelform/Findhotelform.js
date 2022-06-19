@@ -52,48 +52,48 @@ const Findhotelform = () => {
     return (
         <div className="container-fluid">
              <Usernavber></Usernavber>
-    <Row className="">
-        <Col lg={2} sm={12} md={12}>
-             <Form onSubmit={SubmitHandler} className=" searchform p-4 rounded">
-            <Row className="my-4">
-                <Form.Group as={Col} controlId="formGridPassword">
-                <Form.Label className="formlabal fs-6 fw-bold">Destination</Form.Label>
-                <Form.Control  name="destination" onBlur={onBlurHandler}  type="text" placeholder="Hotel Location" />
-                </Form.Group>
-            </Row>
-            <Row className="my-4">
-                <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label className="formlabal fs-6 fw-bold">From Date</Form.Label>
-                <Form.Control  name="fromdate" onBlur={onBlurHandler}  type="date" />
-                </Form.Group>
-            </Row>
-            <Row className="my-4">
-                <Form.Group as={Col} controlId="formGridPassword">
-                <Form.Label className="formlabal fs-6 fw-bold">To Date</Form.Label>
-                <Form.Control  name="todate" onBlur={onBlurHandler}  type="date"  />
-                </Form.Group>
-            </Row>
-            <Row className="my-4">
-               <h5 className="my-2">Adult :<i  onClick={() => {
-                   if(adult > 0) 
-                   {
-                    setAdult(adult - 1)
-                   }
-               }} className="fas fa-minus ms-2"> <span className="ms-2">{adult}</span></i> <i onClick={() => setAdult(adult + 1)} className="fas fa-plus ms-2"></i></h5>
+             <Row className=" mb-4">
+                <Col lg={2} sm={12} md={12}>
+                    <Form onSubmit={SubmitHandler} className=" searchform p-4 rounded">
+                    <Row className="my-4">
+                        <Form.Group as={Col} controlId="formGridPassword">
+                        <Form.Label className="formlabal fs-6 fw-bold">Destination</Form.Label>
+                        <Form.Control  name="destination" onBlur={onBlurHandler}  type="text" placeholder="Hotel Location" />
+                        </Form.Group>
+                    </Row>
+                    <Row className="my-4">
+                        <Form.Group as={Col} controlId="formGridEmail">
+                        <Form.Label className="formlabal fs-6 fw-bold">From Date</Form.Label>
+                        <Form.Control  name="fromdate" onBlur={onBlurHandler}  type="date" />
+                        </Form.Group>
+                    </Row>
+                    <Row className="my-4">
+                        <Form.Group as={Col} controlId="formGridPassword">
+                        <Form.Label className="formlabal fs-6 fw-bold">To Date</Form.Label>
+                        <Form.Control  name="todate" onBlur={onBlurHandler}  type="date"  />
+                        </Form.Group>
+                    </Row>
+                    <Row className="my-4">
+                    <h5 className="my-2">Adult :<i  onClick={() => {
+                        if(adult > 0) 
+                        {
+                            setAdult(adult - 1)
+                        }
+                    }} className="fas fa-minus ms-2"> <span className="ms-2">{adult}</span></i> <i onClick={() => setAdult(adult + 1)} className="fas fa-plus ms-2"></i></h5>
 
-               <h5 className="my-2">Child :<i onClick={() => {
-                   if(child > 0)
-                   {
-                    setChild(child - 1)
-                   }
-               }}  className="fas fa-minus mx-2"> <span className="ms-2">{child}</span></i> <i onClick={() => setChild(child + 1)} className="fas fa-plus ms-2"></i></h5>
-            </Row>
-                <Button  className="my-3 searchbtn"  type="submit">
-            Find Hotel
-            </Button>
-                
-            </Form>
-    </Col>
+                    <h5 className="my-2">Child :<i onClick={() => {
+                        if(child > 0)
+                        {
+                            setChild(child - 1)
+                        }
+                    }}  className="fas fa-minus mx-2"> <span className="ms-2">{child}</span></i> <i onClick={() => setChild(child + 1)} className="fas fa-plus ms-2"></i></h5>
+                    </Row>
+                        <Button  className="my-3 searchbtn"  type="submit">
+                    Find Hotel
+                    </Button>
+                        
+                    </Form>
+                </Col>
                 <Col lg={10} sm={12} md={12}>
                     <Allhotels></Allhotels>
                 </Col>

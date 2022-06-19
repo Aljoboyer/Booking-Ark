@@ -17,7 +17,7 @@ const Allhotels = () => {
             {
                 const filteritem = []
                 setFilterhotel(filteritem)
-                console.log('cancel click', item, filteritem)
+ 
             }  
         if(item === 'cancel')
             {
@@ -58,13 +58,16 @@ const Allhotels = () => {
                 <Col onClick={() => FilterHandler('fitness') } className="fw-bold filtertitle" lg={2} sm={12}  md={6}>
                 <h6 className="title text-center p-2">Fitness Center</h6>
                 </Col>
-            </Row>
+            </Row> 
             {
-                filterhotel.length ?  <Row className="gy-3 gx-2 justify-content-center">
+                filterhotel.length ?  
+                <Row className="gy-3 gx-2 justify-content-center">
                 {
                     filterhotel.map(hotel => <Hotels  key={hotel._id} hotel={hotel}></Hotels>)
                 }
-            </Row> : <> { hotels.length ? <Row className="justify-content-center gy-3 gx-2">
+                </Row> : 
+            <> { hotels.length ? 
+            <Row className="justify-content-center gy-3 gx-2">
                 {
                     hotels.map(hotel => <Hotels  key={hotel._id} hotel={hotel}></Hotels>)
                 }

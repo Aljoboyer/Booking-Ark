@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Charm&family=IBM+Plex+Sans:wght@500&family=Playfair+Display+SC:ital,wght@0,400;1,700&display=swap');
+
+.regular-family{
+  font-family: 'Charm', cursive;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Playfair Display SC', serif;
+}
+
+.fa-star{
+    color: #02133c;
+}
+.share-row{
+    background: rgba(0,0,0,0.5) url('./images//sharebanner.jpg');
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 50vh;
+    width: 100%;
+}
+.lowerexpense-row{
+    background: rgba(0,0,0,0.4) url('./images/comparisionbanner.jpg');
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 60vh;
+    width: 100%;
+}
+.tipsimg{
+    border-radius: 50%;
+}
+.tips-text:hover{
+    color: rgb(255, 225, 0);
+    cursor: pointer;
+}
+.travelphotogrpahy-row{
+    background: rgba(0,0,0,0.4) url('./images/category-photography.jpg');
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 60vh;
+    width: 100%;
+}
+.photography-title{
+    color: #ff8400;
+    font-weight: 900;
+    font-size: 30px;
+}
+.photoGraphy{
+    width: 100vw;
+}
+
+.blog-cards:hover{
+    border: solid 2px #02133c;
+    transition: 0.2s ease-in-out;
+}
+.blog-cards{
+    cursor: pointer;
+}
+.footer{
+    background-color: #1d242d;
+}
+.footer_icon{
+    color: rgb(255, 161, 37)
+}
+.footer_title{
+    color: #dddddd;
+    font-weight: 900;
+}
+.footer_text{
+    color: #dddddd;
+    cursor: pointer;
+}
+.footer_text:hover{
+    text-decoration: underline;
+}
+.navrow{
+    background-color: #02133c;
+    color: white;
+}
+.slider-img{
+    height: 75vh;
+    width: 100vw;
+}
+.sidebar{
+    background: rgb(170, 255, 239)
+}
+.regular-color{
+    color: #02133c;
+}
+.sidebar-text{
+    font-weight: bold;
+}
+.side-text{
+    cursor: pointer;
+    background-color: #02133c;
+    color: white;
+    border-radius: 10px;
+}
+.blogbtn{
+    border: solid #02133c 2px;
+    border-radius: 5px;
+    padding: 5px 15px 5px 15px; 
+}
+.blogimg{
+    width: 300px;
+    height: 250px;
+}
+.subscribe-row{
+    background: rgba(0,0,0,0.2) url('./images/search-background.jpg');
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 60vh;
+}
+.inputss{
+    height: 55px;
+}
+.loginbtn{
+    background-color: yellow;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 15px 10px 15px;
+    font-weight: bold;
+    font-family: 'Charm', cursive;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Playfair Display SC', serif;
+}
+.writebtn{
+    border-radius: 15px;
+    border: none;
+    background-color: white;
+    padding: 20px 30px 20px 30px;
+}
+.writeblogrow{
+    background: rgba(0,0,0,0.2) url('./images/writeblog.jpg');
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 50vh;
+}
+.sitelogo{
+    border-radius: 50%;
+}

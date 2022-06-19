@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import {getIdToken,onAuthStateChanged,updateProfile, signOut,signInWithEmailAndPassword ,getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import initializationFirebase from '../../../Firebasesetup/Firebaseinit';
 import Swal from 'sweetalert2';
-
+ 
 initializationFirebase()
 
 const useFirebase = () => { 

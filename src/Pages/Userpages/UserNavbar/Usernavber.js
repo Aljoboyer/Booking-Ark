@@ -20,6 +20,9 @@ const Usernavber = () => {
             <Nav className="me-auto">
               <Nav.Link  as={Link} to="/"> <span className="navtxt fs-6 fw-bold">Home</span> </Nav.Link>
               <Nav.Link as={Link} to="/findhotelform"><span className="navtxt fs-6 fw-bold">Find-Hotel</span></Nav.Link>
+              <Nav.Link as={Link} to="/TravelPhotography"><span className="navtxt fs-6 fw-bold">TravelPhotography</span></Nav.Link>
+              <Nav.Link as={Link} to="/TravelAdvise"><span className="navtxt fs-6 fw-bold">TravelAdvise</span></Nav.Link>
+
               {
                 user.email ? <>{ isadmin ?  <Nav.Link  as={Link} to="/dashboard"> <span className="navtxt fs-6 fw-bold" >Admin Dashboard</span></Nav.Link> :  <Nav.Link as={Link} to="/mybooking"><span className="navtxt fs-6 fw-bold" >My Bookings</span></Nav.Link> }
                 </> : ''
@@ -27,11 +30,11 @@ const Usernavber = () => {
             </Nav>
             <Nav>
               {
-                user.email ? <button onClick={LogOutHandler} className="btn logoutbtn fw-bold fs-5">LogOut</button> : <Nav.Link className="loginbtn
+                user.email ? <button onClick={LogOutHandler} className="btn logoutbtn fw-bold fs-5">LogOut</button> : <Nav.Link className="loginbtns
                   text-light fw-bold p-3 rounded" as={Link} to="/login">Login</Nav.Link>
               }
               
-            </Nav>
+            </Nav> 
           </Navbar.Collapse>
           </Container>
       </Navbar>
